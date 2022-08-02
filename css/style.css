@@ -1,0 +1,220 @@
+@import url("./fonts-style.css");
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'SFU Futura';
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.container-calendar{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(134, 134, 134, 0.102);
+}
+
+.calendar-section{
+    display: none;
+    z-index: 3;
+    height: calc(100% - 142px);
+    overflow-y: auto;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    padding-bottom: 25px;
+    border-radius: 30px 30px 0 0;
+    background-image:linear-gradient(0,rgb(255, 255, 255, 0.5),rgb(255, 255, 255, 0.5)),url("../img/background-calendar.png");
+    background-position:  bottom center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-attachment: scroll;
+}
+
+.calendar-section::-webkit-scrollbar{
+    width: 0;
+}
+.content-calendar{
+    margin-top: 24px;
+}
+
+.input-calendar{
+    width: 92.5%;
+    height: 50px;
+    border-radius: 10px;
+    margin: 0 16px;
+    border: 1px solid #D7D7D7;
+    padding: 14px 16px;
+}
+
+.input-part{
+    margin: 20px 0px;
+    padding: 0 16px;
+}
+
+#label-date-input{
+    margin-bottom: 20px;
+}
+
+#date-input{
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid #D7D7D7;
+}
+
+.time-of-calendar{
+    margin-top: 30px
+}
+
+.title-time-section, #label-date-input{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.btn-save{
+    background-color: #4D5DFA;
+    width: 350px;
+    height: 67px;
+    margin: auto;
+    border-radius: 100px;
+    line-height: 67px;
+    cursor: pointer;
+}
+
+.btn-save > span{
+    font-size: 20px;
+    font-weight: 900;
+    color: #F2F2F3 !important;
+}
+
+.btn-close{
+    position: absolute;
+    top: 21px;
+    right: 24px;
+    cursor: pointer;
+    color: #010101 !important;
+    opacity: 0.8 !important;
+}
+
+.pick-calendar{
+    width: 100%;
+    display: block;
+}
+
+.calendar-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    background-color: #e6e6e6;
+}
+
+.fs-20{
+    font-size: 20px;
+}
+.to-day{
+    background-color: rgb(76, 93, 250, 0.2);
+    border-radius: 50%;
+}
+
+.first-dayweek{
+    background-color: #4D5DFA;
+    color: #FFFFFF;
+    border-radius: 50%;
+    line-height: 30px;
+}
+
+span.position-absolute{
+    top: 8px;
+    right: 8px;
+}
+
+
+.icon-prev-month{
+    padding: 8px 24px 8px 24px;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+}
+
+.icon-next-month{
+    right: 0;
+    top: 0;
+    padding: 8px 24px 8px 24px;
+}
+
+/* Style Calendar Body */
+.calendar-body{
+    letter-spacing: 0.2px;
+    margin-left: 3.74%;
+}
+.calendar-body .calendar-week-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.calendar-body .calendar-week-days > div{
+    width: 30px;
+    height: 30px;
+    font-weight: 700;
+
+}
+.calendar-body .calendar-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    max-height: 230px;
+    padding-bottom: 40px;
+    gap: 10px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.calendar-body .calendar-days > div{
+    line-height: 30px;
+    width: 30px;
+}
+
+.calendar-body .calendar-days > .prev-days{
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.calendar-body .calendar-days > .next-days{
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.disable-day{
+    pointer-events: none !important;
+    opacity: 0.2;
+}
+
+/* Time Section */
+.font-style-timepicker{
+    font-weight: 700 !important;
+    font-size: 20px !important;
+    opacity: 1 !important;
+}
+
+.f-14{
+    font-size: 14px !important;
+    opacity: 0.2 !important;
+}
+
+.f-16{
+    font-size: 16px;
+}
+
+.picker-scroller::-webkit-scrollbar{
+    width:0 !important;
+}
+.clone-scroller::-webkit-scrollbar{
+    width:0 !important;
+}

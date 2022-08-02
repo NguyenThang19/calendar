@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaHeavy.woff2') format('woff2'),
+        url('../fonts/SFUFuturaHeavy.woff') format('woff'),
+        url('../fonts/SFUFuturaHeavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaExtraBoldOblique.woff2') format('woff2'),
+        url('../fonts/SFUFuturaExtraBoldOblique.woff') format('woff'),
+        url('../fonts/SFUFuturaExtraBoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaExtraBold.woff2') format('woff2'),
+        url('../fonts/SFUFuturaExtraBold.woff') format('woff'),
+        url('../fonts/SFUFuturaExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaHeavyOblique.woff2') format('woff2'),
+        url('../fonts/SFUFuturaHeavyOblique.woff') format('woff'),
+        url('../fonts/SFUFuturaHeavyOblique.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaBold.woff2') format('woff2'),
+        url('../fonts/SFUFuturaBold.woff') format('woff'),
+        url('../fonts/SFUFuturaBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaBoldOblique.woff2') format('woff2'),
+        url('../fonts/SFUFuturaBoldOblique.woff') format('woff'),
+        url('../fonts/SFUFuturaBoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaLight.woff2') format('woff2'),
+        url('../fonts/SFUFuturaLight.woff') format('woff'),
+        url('../fonts/SFUFuturaLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaBook.woff2') format('woff2'),
+        url('../fonts/SFUFuturaBook.woff') format('woff'),
+        url('../fonts/SFUFuturaBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaBookOblique.woff2') format('woff2'),
+        url('../fonts/SFUFuturaBookOblique.woff') format('woff'),
+        url('../fonts/SFUFuturaBookOblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaOblique.woff2') format('woff2'),
+        url('../fonts/SFUFuturaOblique.woff') format('woff'),
+        url('../fonts/SFUFuturaOblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFuturaLightOblique.woff2') format('woff2'),
+        url('../fonts/SFUFuturaLightOblique.woff') format('woff'),
+        url('../fonts/SFUFuturaLightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SFU Futura';
+    src: url('../fonts/SFUFutura.woff2') format('woff2'),
+        url('../fonts/SFUFutura.woff') format('woff'),
+        url('../fonts/SFUFutura.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
