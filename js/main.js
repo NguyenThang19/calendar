@@ -3,10 +3,16 @@ $(document).ready(function(){
   let date = new Date();
   let arrDateTime = [];
   let arrValueForDateInPut = [];
+  // Current hour
+  let curHour = date.getHours();
+  // Current Minutes
+  let curMinute=date.getMinutes();
   // Month Array
   const arrMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const arrWeeks = ['Chủ Nhật','Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
 
+  // Setup Default
+  $('#date-input').prop('readonly',true);
   // Function for value date input section 
     const setValueDateInput = () => {
       let dayChoise = $('.calendar-days > .to-day').html();
@@ -127,10 +133,6 @@ $(document).ready(function(){
         }
       };
 
-      // Current hour
-      let curHour = new Date().getHours();
-      // Current Minutes
-      let curMinute=new Date().getMinutes();
       setHour();
       setMinute();
 
@@ -188,10 +190,10 @@ $(document).ready(function(){
    timPicker();
 
   // Reset Calendar
-  function resetCalendar(){
-    $('.calendar-days > div.to-day').removeClass("to-day");
-    $('.calendar-days').find(".curr-Day").addClass("to-day");
-  }
+  // function resetCalendar(){
+  //   $('.calendar-days > div.to-day').removeClass("to-day");
+  //   $('.calendar-days').find(".curr-Day").addClass("to-day");
+  // }
 
   // Choise Day
   function choiseDate(){
@@ -230,13 +232,15 @@ $(document).ready(function(){
 
     let touchStartX = 0;
     let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
     function checkDirection (){
-      if(touchStartX > touchEndX){
+      if(touchStartX > touchEndX && Math.abs(touchEndY - touchStartY) <= 40){
         date.setMonth(date.getMonth()+1);
         generateCalendar();
         setMinDate();
         $('.calendar-heading > .icon-prev-month').css('opacity','1');
-      }else if(touchStartX < touchEndX){
+      }else if(touchStartX < touchEndX && Math.abs(touchEndY - touchStartY) <= 40){
         let prevMonth = parseInt($('.calendar-month-years > span.month').html());
         let nextYear = parseInt($('.calendar-month-years > span.year').html());
         let presentMonth = new Date().getMonth();
@@ -259,9 +263,11 @@ $(document).ready(function(){
     }
     calendarBody.addEventListener('touchstart', e => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     });
     calendarBody.addEventListener('touchend',e => {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       checkDirection();
     })
   };
@@ -275,8 +281,8 @@ $(document).ready(function(){
     $("#input-date").blur();
     setValueDateInput();
     fellValueForDateInput();
-    resetCalendar();
-    generateCalendar();
+    // resetCalendar();
+    // generateCalendar();
     timPicker();
     setMinDate();
   });
@@ -288,6 +294,8 @@ $(document).ready(function(){
     setTimeout(() => {
     $('.container-calendar').css('visibility','hidden');
     }, 400);
+    curHour = arrValueForDateInPut[0];
+    curMinute = arrValueForDateInPut[1];
   });
 
   // Bubbling Event
