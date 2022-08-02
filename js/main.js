@@ -235,12 +235,12 @@ $(document).ready(function(){
     let touchStartY = 0;
     let touchEndY = 0;
     function checkDirection (){
-      if(touchStartX > touchEndX && Math.abs(touchEndY - touchStartY) <= 40){
+      if(touchStartX > touchEndX && Math.abs(touchEndY - touchStartY) <= 20){
         date.setMonth(date.getMonth()+1);
         generateCalendar();
         setMinDate();
         $('.calendar-heading > .icon-prev-month').css('opacity','1');
-      }else if(touchStartX < touchEndX && Math.abs(touchEndY - touchStartY) <= 40){
+      }else if(touchStartX < touchEndX && Math.abs(touchEndY - touchStartY) <= 20){
         let prevMonth = parseInt($('.calendar-month-years > span.month').html());
         let nextYear = parseInt($('.calendar-month-years > span.year').html());
         let presentMonth = new Date().getMonth();
