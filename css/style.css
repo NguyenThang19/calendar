@@ -196,6 +196,11 @@ span.position-absolute{
     opacity: 0.2;
 }
 
+.disactive-btn{
+    background-color: #e6e6e6;
+    pointer-events: none;
+}
+
 /* Time Section */
 .font-style-timepicker{
     font-weight: 700 !important;
@@ -218,3 +223,4 @@ span.position-absolute{
 .clone-scroller::-webkit-scrollbar{
     width:0 !important;
 }
+
