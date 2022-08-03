@@ -77,6 +77,7 @@ $(document).ready(function(){
         $(this).addClass('to-day');
         setValueDateInput();
         fellValueForDateInput();
+        checkDataInput();
       })
   };
 
@@ -100,12 +101,14 @@ $(document).ready(function(){
       setMinDate();
       $('.calendar-heading > .icon-prev-month').css('opacity','0.2');
     }
+    checkDataInput();
 });
   // To Next Month
   $('.icon-next-month').click( () => {
       date.setMonth(date.getMonth()+1);
       generateCalendar();
       setMinDate();
+      checkDataInput();
       $('.calendar-heading > .icon-prev-month').css('opacity','1');
   });
   generateCalendar();
@@ -195,19 +198,6 @@ $(document).ready(function(){
   //   $('.calendar-days').find(".curr-Day").addClass("to-day");
   // }
 
-  // Choise Day
-  function choiseDate(){
-    let dayChoise = $('.calendar-days > .to-day').html();
-    let monthChoise = $('.calendar-month-years > .month').html();
-    let yearChoise = $('.calendar-month-years > .year').html();
-    let weekDayChoise = arrWeeks[new Date(yearChoise, monthChoise - 1, dayChoise).getDay()];
-    arrDateTime[2] = weekDayChoise;
-    arrDateTime[3] = dayChoise;
-    arrDateTime[4] = monthChoise;
-    arrDateTime[5] = yearChoise;
-  }
-
-
   // Set Min Date 
   const setMinDate = () => {
     let nodeListDay = $('.calendar-days > div');
@@ -226,10 +216,9 @@ $(document).ready(function(){
       }
   }
 
-  // Touch Events Change Calendar
+  // Touch Events Change Month Calendar
   function changeCalendar() {
     let calendarBody = $('.calendar-body')[0];
-
     let touchStartX = 0;
     let touchEndX = 0;
     let touchStartY = 0;
@@ -240,6 +229,7 @@ $(document).ready(function(){
         generateCalendar();
         setMinDate();
         $('.calendar-heading > .icon-prev-month').css('opacity','1');
+        checkDataInput();
       }else if(touchStartX < touchEndX && Math.abs(touchEndY - touchStartY) <= 40){
         let prevMonth = parseInt($('.calendar-month-years > span.month').html());
         let nextYear = parseInt($('.calendar-month-years > span.year').html());
@@ -249,14 +239,17 @@ $(document).ready(function(){
           date.setMonth(date.getMonth()-1);
           generateCalendar();
           setMinDate();
+          checkDataInput();
         }else if (presentYear < nextYear){
           date.setMonth(date.getMonth() - 1);
           generateCalendar();
           setMinDate();
+          checkDataInput();
           $('.calendar-heading > .icon-prev-month').css('opacity','1');
         }else{
           generateCalendar();
           setMinDate();
+          checkDataInput();
           $('.calendar-heading > .icon-prev-month').css('opacity','0.2');
         }
       }
@@ -273,6 +266,18 @@ $(document).ready(function(){
   };
   changeCalendar();
 
+  // Function check data input
+  function checkDataInput(){
+    let checkDay = $('.calendar-days > div.to-day').html();
+    if(checkDay == null){
+      $(".btn-save").addClass('disactive-btn');
+    }else{
+      $(".btn-save").removeClass('disactive-btn');
+    }
+  }
+
+  // checkDataInput();
+
   // Form Input Click
   $("#input-date").click( function (event){
     $('.calendar-section').slideDown("slow");
@@ -287,8 +292,7 @@ $(document).ready(function(){
   });
   // Event Button Save
   $(".btn-save").click( () => {
-    choiseDate();
-    $('#input-date').val(`${arrDateTime[0]}:${arrDateTime[1]} - ${arrDateTime[2]}  ${arrDateTime[3]} / ${arrDateTime[4]} / ${arrDateTime[5]}`);
+    $('#input-date').val(`${arrValueForDateInPut[0]}:${arrValueForDateInPut[1]} - ${arrValueForDateInPut[2]}  ${arrValueForDateInPut[3]} / ${arrValueForDateInPut[4]} / ${arrValueForDateInPut[5]}`);
     $('.calendar-section').slideUp("slow");
     setTimeout(() => {
     $('.container-calendar').css('visibility','hidden');
