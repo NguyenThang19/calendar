@@ -15,9 +15,9 @@ $(document).ready(function(){
   $('#date-input').prop('readonly',true);
   // Function for value date input section 
     const setValueDateInput = () => {
-      let dayChoise = $('.calendar-days > .to-day').html();
-      let monthChoise = $('.calendar-month-years > .month').html();
-      let yearChoise = $('.calendar-month-years > .year').html();
+      let dayChoise = $('.calendarBody__calendarDays > .to-day').html();
+      let monthChoise = $('.calendarHeading__infoCalendar > .month').html();
+      let yearChoise = $('.calendarHeading__infoCalendar > .year').html();
       let weekDayChoise = arrWeeks[new Date(yearChoise, monthChoise - 1, dayChoise).getDay()];
       arrValueForDateInPut[2] = weekDayChoise;
       arrValueForDateInPut[3] = dayChoise;
@@ -68,12 +68,12 @@ $(document).ready(function(){
       // Days of Next Day 
       for(j=1; j <= nextDayOfNextMonth + 1; j ++ ){
           days += `<div class = "next-days">${j}</div>`;
-          $('.calendar-days').html(days);
+          $('.calendarBody__calendarDays').html(days);
       };
 
       // Set To Day
-      $('.calendar-days div').click( function () {
-        $('.calendar-days > div.to-day').removeClass("to-day");
+      $('.calendarBody__calendarDays div').click( function () {
+        $('.calendarBody__calendarDays > div.to-day').removeClass("to-day");
         $(this).addClass('to-day');
         setValueDateInput();
         fellValueForDateInput();
@@ -82,9 +82,9 @@ $(document).ready(function(){
   };
 
   // To Prev Month
-  $('.icon-prev-month').click( () => {
-    let prevMonth = parseInt($('.calendar-month-years > span.month').html());
-    let nextYear = parseInt($('.calendar-month-years > span.year').html());
+  $('.calendarHeading_iconPrevMonth').click( () => {
+    let prevMonth = parseInt($('.calendarHeading__infoCalendar > span.month').html());
+    let nextYear = parseInt($('.calendarHeading__infoCalendar > span.year').html());
     let presentMonth = new Date().getMonth();
     let presentYear = new Date().getFullYear();
     if( prevMonth > (presentMonth + 1) ){
@@ -95,21 +95,21 @@ $(document).ready(function(){
       date.setMonth(date.getMonth() - 1);
       generateCalendar();
       setMinDate();
-      $('.calendar-heading > .icon-prev-month').css('opacity','1');
+      $('.pickCalendar__calendarHeading > .calendarHeading_iconPrevMonth').css('opacity','1');
     }else{
       generateCalendar();
       setMinDate();
-      $('.calendar-heading > .icon-prev-month').css('opacity','0.2');
+      $('.pickCalendar__calendarHeading > .calendarHeading_iconPrevMonth').css('opacity','0.2');
     }
     checkDataInput();
 });
   // To Next Month
-  $('.icon-next-month').click( () => {
+  $('.calendarHeading_iconNextMonth').click( () => {
       date.setMonth(date.getMonth()+1);
       generateCalendar();
       setMinDate();
       checkDataInput();
-      $('.calendar-heading > .icon-prev-month').css('opacity','1');
+      $('.pickCalendar__calendarHeading > .calendarHeading_iconPrevMonth').css('opacity','1');
   });
   generateCalendar();
 
@@ -194,17 +194,17 @@ $(document).ready(function(){
 
   // Reset Calendar
   // function resetCalendar(){
-  //   $('.calendar-days > div.to-day').removeClass("to-day");
-  //   $('.calendar-days').find(".curr-Day").addClass("to-day");
+  //   $('.calendarBody__calendarDays > div.to-day').removeClass("to-day");
+  //   $('.calendarBody__calendarDays').find(".curr-Day").addClass("to-day");
   // }
 
   // Set Min Date 
   const setMinDate = () => {
-    let nodeListDay = $('.calendar-days > div');
-    let nodeListPrevDay = $('.calendar-days > div.prev-days');
-    let nodeListNextDay = $('.calendar-days > div.next-days');
-    let months = $('.calendar-month-years > span.month').html();
-    let years = $('.calendar-month-years > span.year').html();
+    let nodeListDay = $('.calendarBody__calendarDays > div');
+    let nodeListPrevDay = $('.calendarBody__calendarDays > div.prev-days');
+    let nodeListNextDay = $('.calendarBody__calendarDays > div.next-days');
+    let months = $('.calendarHeading__infoCalendar > span.month').html();
+    let years = $('.calendarHeading__infoCalendar > span.year').html();
     if(parseInt(years) === new Date().getFullYear() && parseInt(months -1) === new Date().getMonth())
     {
       for(let i = (nodeListPrevDay.length); i < (nodeListDay.length - nodeListPrevDay.length - nodeListNextDay.length); i++){
@@ -218,7 +218,7 @@ $(document).ready(function(){
 
   // Touch Events Change Month Calendar
   function changeCalendar() {
-    let calendarBody = $('.calendar-body')[0];
+    let calendarBody = $('.pickCalendar__calendarBody')[0];
     let touchStartX = 0;
     let touchEndX = 0;
     let touchStartY = 0;
@@ -228,11 +228,11 @@ $(document).ready(function(){
         date.setMonth(date.getMonth()+1);
         generateCalendar();
         setMinDate();
-        $('.calendar-heading > .icon-prev-month').css('opacity','1');
+        $('.pickCalendar__calendarHeading > .calendarHeading_iconPrevMonth').css('opacity','1');
         checkDataInput();
       }else if(touchStartX < touchEndX && Math.abs(touchEndY - touchStartY) <= 40){
-        let prevMonth = parseInt($('.calendar-month-years > span.month').html());
-        let nextYear = parseInt($('.calendar-month-years > span.year').html());
+        let prevMonth = parseInt($('.calendarHeading__infoCalendar > span.month').html());
+        let nextYear = parseInt($('.calendarHeading__infoCalendar > span.year').html());
         let presentMonth = new Date().getMonth();
         let presentYear = new Date().getFullYear();
         if( prevMonth > (presentMonth + 1) ){
@@ -245,12 +245,12 @@ $(document).ready(function(){
           generateCalendar();
           setMinDate();
           checkDataInput();
-          $('.calendar-heading > .icon-prev-month').css('opacity','1');
+          $('.pickCalendar__calendarHeading > .calendarHeading_iconPrevMonth').css('opacity','1');
         }else{
           generateCalendar();
           setMinDate();
           checkDataInput();
-          $('.calendar-heading > .icon-prev-month').css('opacity','0.2');
+          $('.pickCalendar__calendarHeading > .calendarHeading_iconPrevMonth').css('opacity','0.2');
         }
       }
     }
@@ -268,11 +268,11 @@ $(document).ready(function(){
 
   // Function check data input
   function checkDataInput(){
-    let checkDay = $('.calendar-days > div.to-day').html();
+    let checkDay = $('.calendarBody__calendarDays > div.to-day').html();
     if(checkDay == null){
-      $(".btn-save").addClass('disactive-btn');
+      $(".calendarSection__btn--save").addClass('disactive-btn');
     }else{
-      $(".btn-save").removeClass('disactive-btn');
+      $(".calendarSection__btn--save").removeClass('disactive-btn');
     }
   }
 
@@ -280,7 +280,7 @@ $(document).ready(function(){
 
   // Form Input Click
   $("#input-date").click( function (event){
-    $('.calendar-section').slideDown("slow");
+    $('.calendarSection').slideDown("slow");
     $('.container-calendar').css('visibility','visible');
     $("#input-date").blur();
     setValueDateInput();
@@ -291,9 +291,9 @@ $(document).ready(function(){
     setMinDate();
   });
   // Event Button Save
-  $(".btn-save").click( () => {
+  $(".calendarSection__btn--save").click( () => {
     $('#input-date').val(`${arrValueForDateInPut[0]}:${arrValueForDateInPut[1]} - ${arrValueForDateInPut[2]}  ${arrValueForDateInPut[3]} / ${arrValueForDateInPut[4]} / ${arrValueForDateInPut[5]}`);
-    $('.calendar-section').slideUp("slow");
+    $('.calendarSection').slideUp("slow");
     setTimeout(() => {
     $('.container-calendar').css('visibility','hidden');
     }, 400);
@@ -304,19 +304,19 @@ $(document).ready(function(){
   // Bubbling Event
   $('.container-calendar').click( () => {
     
-    $('.calendar-section').slideUp("slow");
+    $('.calendarSection').slideUp("slow");
     setTimeout(() => {
       $('.container-calendar').css('visibility','hidden');
     }, 400);
   });
 
-  $('.calendar-section').click( (event) => {
+  $('.calendarSection').click( (event) => {
     event.stopPropagation();
   });
 
   // Button Close
-  $('.btn-close').click( () => {
-    $('.calendar-section').slideUp("slow");
+  $('.calendarSection__btn--close').click( () => {
+    $('.calendarSection').slideUp("slow");
     $('.container-calendar').css('visibility','hidden');
   });
 

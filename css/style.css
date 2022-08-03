@@ -18,7 +18,7 @@
     background-color: rgba(134, 134, 134, 0.102);
 }
 
-.calendar-section{
+.calendarSection{
     display: none;
     z-index: 3;
     height: calc(100% - 142px);
@@ -35,14 +35,14 @@
     background-attachment: scroll;
 }
 
-.calendar-section::-webkit-scrollbar{
+.calendarSection::-webkit-scrollbar{
     width: 0;
 }
-.content-calendar{
+.calendarSection__contentCalendar{
     margin-top: 24px;
 }
 
-.input-calendar{
+.inputSection__inputCalendar{
     width: 92.5%;
     height: 50px;
     border-radius: 10px;
@@ -51,7 +51,7 @@
     padding: 14px 16px;
 }
 
-.input-part{
+.calendarSection__inputPart{
     margin: 20px 0px;
     padding: 0 16px;
 }
@@ -66,16 +66,16 @@
     border: 1px solid #D7D7D7;
 }
 
-.time-of-calendar{
+.contentCalendar__timeSection{
     margin-top: 30px
 }
 
-.title-time-section, #label-date-input{
+.contentCalendar__timeSection_title, #label-date-input{
     font-size: 20px;
     font-weight: 900;
 }
 
-.btn-save{
+.calendarSection__btn--save{
     background-color: #4D5DFA;
     width: 350px;
     height: 67px;
@@ -85,13 +85,13 @@
     cursor: pointer;
 }
 
-.btn-save > span{
+.calendarSection__btn--save > span{
     font-size: 20px;
     font-weight: 900;
     color: #F2F2F3 !important;
 }
 
-.btn-close{
+.calendarSection__btn--close{
     position: absolute;
     top: 21px;
     right: 24px;
@@ -100,12 +100,12 @@
     opacity: 0.8 !important;
 }
 
-.pick-calendar{
+.dateOfCalendar__pickCalendar{
     width: 100%;
     display: block;
 }
 
-.calendar-heading{
+.pickCalendar__calendarHeading{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -135,38 +135,38 @@ span.position-absolute{
 }
 
 
-.icon-prev-month{
+.calendarHeading_iconPrevMonth{
     padding: 8px 24px 8px 24px;
     left: 0;
     top: 0;
     opacity: 0.2;
 }
 
-.icon-next-month{
+.calendarHeading_iconNextMonth{
     right: 0;
     top: 0;
     padding: 8px 24px 8px 24px;
 }
 
 /* Style Calendar Body */
-.calendar-body{
+.pickCalendar__calendarBody{
     letter-spacing: 0.2px;
     margin-left: 3.74%;
 }
-.calendar-body .calendar-week-days{
+.pickCalendar__calendarBody .calendarBody__calendarWeekDays{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
     text-align: center;
 }
 
-.calendar-body .calendar-week-days > div{
+.pickCalendar__calendarBody .calendarBody__calendarWeekDays > div{
     width: 30px;
     height: 30px;
     font-weight: 700;
 
 }
-.calendar-body .calendar-days{
+.pickCalendar__calendarBody .calendarBody__calendarDays{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     max-height: 230px;
@@ -176,17 +176,17 @@ span.position-absolute{
     font-weight: normal;
 }
 
-.calendar-body .calendar-days > div{
+.pickCalendar__calendarBody .calendarBody__calendarDays > div{
     line-height: 30px;
     width: 30px;
 }
 
-.calendar-body .calendar-days > .prev-days{
+.pickCalendar__calendarBody .calendarBody__calendarDays > .prev-days{
     opacity: 0.2;
     pointer-events: none;
 }
 
-.calendar-body .calendar-days > .next-days{
+.pickCalendar__calendarBody .calendarBody__calendarDays > .next-days{
     opacity: 0.2;
     pointer-events: none;
 }

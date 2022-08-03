@@ -11,43 +11,43 @@
 </head>
 <body>
     <!-- Input Section -->
-    <div class="container">
+    <div class="container inputSection">
         <form action="#" class="mx-3 pb-3">
-            <input type="text" placeholder="" id="input-date" class="input-calendar">
+            <input type="text" placeholder="" id="input-date" class="inputSection__inputCalendar">
         </form>    
     </div>
     <!-- End Input Section -->
 
     <div class="container-fluid px-0">
         <!-- calendar Section -->
-        <div class="container-fluid px-0 calendar-section position-absolute">
+        <div class="container-fluid px-0 calendarSection position-absolute">
             <!-- Calendar Heading -->
-            <div class="row mx-0 input-part">
+            <div class="row mx-0 calendarSection__inputPart">
                 <label for="date-input" id="label-date-input">Ngày</label>
                 <input type="text" id="date-input" name="date-input">
             </div>
-            <div class="mx-0 btn-close">                   
+            <div class="mx-0 calendarSection__btn--close">                   
             </div>
-            <div class="row mx-0 content-calendar">
-                <div class="col-sm-12 px-0 date-of-calendar">
-                    <div class="pick-calendar">
-                        <div class="calendar-heading position-relative">
-                            <div class="icon-prev-month position-absolute">
+            <div class="row mx-0 calendarSection__contentCalendar">
+                <div class="col-sm-12 px-0 contentCalendar__dateOfCalendar">
+                    <div class="dateOfCalendar__pickCalendar">
+                        <div class="pickCalendar__calendarHeading position-relative">
+                            <div class="calendarHeading_iconPrevMonth position-absolute">
                                 <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z" fill="black"/>
                                 </svg>                                                                        
                             </div>
-                            <div class="calendar-month-years">
+                            <div class="calendarHeading__infoCalendar">
                                 Tháng <span class="month"></span> - <span class="year"></span>
                             </div>
-                            <div class="icon-next-month position-absolute">
+                            <div class="calendarHeading_iconNextMonth position-absolute">
                                 <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5.09128 6.5L0 11.5558L1.45436 13L8 6.5L1.45436 0L0 1.44422L5.09128 6.5Z" fill="black"/>
                                 </svg>                                                                     
                             </div>
                         </div>
-                        <div class="calendar-body">
-                                <div class="calendar-week-days mb-3">
+                        <div class="pickCalendar__calendarBody">
+                                <div class="calendarBody__calendarWeekDays mb-3">
                                     <div id = "day-1" class="first-dayweek">2</div>
                                     <div id = "day-2" >3</div>
                                     <div id = "day-3" >4</div>
@@ -56,16 +56,16 @@
                                     <div id = "day-6" >7</div>
                                     <div id = "day-0" >CN</div>
                                 </div>
-                                <div class="calendar-days">
+                                <div class="calendarBody__calendarDays">
                                 </div>
                         </div>
                     </div>
                     
                 </div>
                 <div class="row mx-0">
-                    <div class="col-sm-12 px-0 time-of-calendar">
+                    <div class="col-sm-12 px-0 contentCalendar__timeSection">
                         <div class="row mx-0">
-                            <div class="col-sm-12 title-time-section">
+                            <div class="col-sm-12 contentCalendar__timeSection__title">
                                 Thời gian
                             </div>
                         </div>
@@ -79,9 +79,9 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             <div class="row mx-0">
-                <div class="col-sm-12 px-0 text-center btn-save text-center">
+                <div class="col-sm-12 px-0 text-center calendarSection__btn--save text-center">
                     <span>Lưu</span>
                 </div>
             </div>
